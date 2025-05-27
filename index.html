@@ -1,0 +1,140 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Elements in Twitter Bootstrap</title>
+
+    <!-- Elements: Web Component -->
+    <script src="https://unpkg.com/@stoplight/elements/web-components.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@stoplight/elements/styles.min.css">
+
+    <!-- Twitter Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Twitter Bootstrap: Sticky Footer Example -->
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.5/examples/sticky-footer-navbar/sticky-footer-navbar.css">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        main {
+            flex: 1 0 0;
+            overflow: hidden;
+            display: none;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Fixed navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div class="login-container">
+    <form id="loginForm">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <div id="errorMessage" class="error-message">Invalid username or password</div>
+    </form>
+</div>
+
+<!-- Begin page content -->
+<main role="main">
+    <elements-api
+            apiDescriptionUrl="https://api.apis.guru/v2/specs/github.com/1.1.4/openapi.yaml"
+            router="hash"
+    />
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <span class="text-muted">Awesome footer goes here.</span>
+    </div>
+</footer>
+<script>
+    function MD5(string) {
+        const crypto = window.crypto || window.msCrypto;
+        const buffer = new TextEncoder().encode(string);
+        return crypto.subtle.digest('MD5', buffer).then(hash => {
+            return Array.from(new Uint8Array(hash))
+                .map(b => b.toString(16).padStart(2, '0'))
+                .join('');
+        });
+    }
+
+    async function fetchUserData() {
+        const response = await fetch('your-api-endpoint');
+        return await response.json();
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const hashedPassword = await MD5(password);
+
+        const userData = await fetchUserData();
+        const user = userData.find(u => u.username === username && u.password === hashedPassword);
+
+        if (user) {
+            document.querySelector('.login-container').style.display = 'none';
+            document.querySelector('main').style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none';
+            document.querySelector('elements-api').setAttribute('apiDescriptionUrl', user.apiDescriptionUrl);
+        } else {
+            document.getElementById('errorMessage').style.display = 'block';
+        }
+    });
+</script>
+</body>
+</html>
+
