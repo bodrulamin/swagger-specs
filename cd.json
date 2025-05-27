@@ -8,7 +8,7 @@
   {
     "username": "user",
     "password": "04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb",
-    "apiDescriptionUrl": "https://api.apis.guru/v2/specs/twitter.com/2.0.0/openapi.yaml"
+    "apiDescriptionUrl": "https://raw.githubusercontent.com/stoplightio/Public-APIs/master/reference/zoom/openapi.yaml"
   }
 ]
 
