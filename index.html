@@ -112,7 +112,7 @@
     }
 
     async function fetchUserData() {
-        const response = await fetch('your-api-endpoint');
+        const response = await fetch('https://raw.githubusercontent.com/bodrulamin/swagger-specs/refs/heads/main/crd.json');
         return await response.json();
     }
 
