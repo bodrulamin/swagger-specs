@@ -6289,12 +6289,12 @@
     remark-slug "^6.0.0"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-styling-webpack@0.0.5":
-  version "0.0.5"
-  resolved "https://registry.npmjs.org/@storybook/addon-styling-webpack/-/addon-styling-webpack-0.0.5.tgz"
-  integrity sha512-8XdE3w+W7qxMeqnK/FDFipFN9XaVKUJFcHyM2ZBlhAAxVWMbTcifqw5lzqeK8jSAA/TUtpUp37gT2Bw/3k6slQ==
+"@storybook/addon-styling-webpack@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-styling-webpack/-/addon-styling-webpack-1.0.1.tgz#660ee002ec249f6e32dd2784abfa50f59ef97951"
+  integrity sha512-5n+SXPfMTc4m7sWaJWPWjoHYWc6/B111M2Ia55toQ3GV4ON4vVlTgH9FX+EgCkDticElj99HLTMDJkHRj2yvkg==
   dependencies:
-    "@storybook/node-logger" "^7.0.12"
+    "@storybook/node-logger" "^8.0.0-alpha.10"
 
 "@storybook/addon-toolbars@7.5.3":
   version "7.5.3"
@@ -6742,10 +6742,15 @@
   resolved "https://registry.npmjs.org/@storybook/mdx2-csf/-/mdx2-csf-1.1.0.tgz"
   integrity sha512-TXJJd5RAKakWx4BtpwvSNdgTDkKM6RkXU8GK34S/LhidQ5Pjz3wcnqb0TxEkfhK/ztbP8nKHqXFwLfa2CYkvQw==
 
-"@storybook/node-logger@7.5.3", "@storybook/node-logger@^7.0.12":
+"@storybook/node-logger@7.5.3":
   version "7.5.3"
   resolved "https://registry.npmjs.org/@storybook/node-logger/-/node-logger-7.5.3.tgz"
   integrity sha512-7ZZDw/q3hakBj1FngsBjaHNIBguYAWojp7R1fFTvwkeunCi21EUzZjRBcqp10kB6BP3/NLX32bIQknsCWD76rQ==
+
+"@storybook/node-logger@^8.0.0-alpha.10":
+  version "8.6.14"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-8.6.14.tgz#f5f6971a88e21c20855506ab54be22ab43673946"
+  integrity sha512-/H67NMvc9hDOaNgVragsHaeXQ5JzwAQfyx1QeL4vlx2SPGoWXmxpoRXZTpOJRaNOhKlYh6sDj/3Lx2xOH5IxnQ==
 
 "@storybook/postinstall@7.5.3":
   version "7.5.3"
