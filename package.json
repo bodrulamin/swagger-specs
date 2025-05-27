@@ -21,7 +21,7 @@
     "@stoplight/eslint-config": "2.1.0",
     "@storybook/addon-controls": "7.5.3",
     "@storybook/addon-docs": "7.5.3",
-    "@storybook/addon-styling-webpack": "0.0.5",
+    "@storybook/addon-styling-webpack": "1.0.1",
     "@storybook/addon-toolbars": "7.5.3",
     "@storybook/addon-viewport": "7.5.3",
     "@storybook/addons": "7.5.3",
